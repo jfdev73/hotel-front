@@ -14,6 +14,15 @@
     display: flex;
     justify-content: space-between;
 
+    .home-header_container-user{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      padding-right: 35px;
+      column-gap: 12px;
+    }
+
   }
 
   .home-aside{

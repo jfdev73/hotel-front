@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class UserIconComponent {
 
+  width = '48px';
+  height ='48px';
+  color ='white';
+
 }
