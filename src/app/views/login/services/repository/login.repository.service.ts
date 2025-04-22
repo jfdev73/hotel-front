@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {User} from "../../models/User";
-import {Observable} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
 import {ResponseLogin} from "../../models/ResponseLogin";
 
 @Injectable({
@@ -13,13 +13,13 @@ export class LoginRepositoryService {
 
   private readonly baseUrl: string = "./api";
 
-  constructor() { }
-
-  login(data: User): Observable<ResponseLogin>{
-
-    return this.http.post<ResponseLogin>(`${this.baseUrl}/login`, data);
-
-
-
+  constructor() {
   }
+
+  login(data: User): Observable<ResponseLogin> {
+
+    return this.http.post<ResponseLogin>(`${this.baseUrl}/login`, data)
+  }
+
+
 }

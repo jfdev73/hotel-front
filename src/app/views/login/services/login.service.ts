@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from "../models/User";
 import {LoginRepositoryService} from "./repository/login.repository.service";
 
@@ -7,17 +7,18 @@ import {LoginRepositoryService} from "./repository/login.repository.service";
 })
 export class LoginService {
 
-  constructor(private repository: LoginRepositoryService) { }
+  constructor(private repository: LoginRepositoryService) {
+  }
 
-  loginUser(user: User){
+  loginUser(user: User): any {
     return new Promise((resolve, reject) => {
-      this.repository.login(user).subscribe((data)=>{
-        if(data.token){
+      this.repository.login(user).subscribe((data) => {
+        if (data.token) {
           window.localStorage.setItem("token", data.token);
           resolve('')
         }
       })
-
     })
   }
 }
+
